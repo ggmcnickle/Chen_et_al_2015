@@ -1,10 +1,12 @@
 
-
+library(readxl)
 
 #Step 1: Download the data, and unzip the zip file. http://dx.doi.org/10.5061/dryad.dr491
 
 dir = "" #Step 2: specify the directory you stored the file
-chen<-read.csv(paste0(dir,"data_Chen_et_al_Funct_Ecol.csv"))
+chen=data.frame(read_excel(
+	paste0(dir,"data_Chen_et_al_Funct_Ecol.xlsx"), 
+	na="NA"))
 
 tiff(paste0(dir,"Fig2.tiff"),
 	width = 10, height = 10, units = "cm", res = 300)
